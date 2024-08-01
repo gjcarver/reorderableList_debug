@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "n4o_workflow" "\0"
+            VALUE "FileDescription", "flutter_reorderablelist" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "n4o_workflow" "\0"
+            VALUE "InternalName", "flutter_reorderablelist" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "n4o_workflow.exe" "\0"
-            VALUE "ProductName", "n4o_workflow" "\0"
+            VALUE "OriginalFilename", "flutter_reorderablelist.exe" "\0"
+            VALUE "ProductName", "flutter_reorderablelist" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

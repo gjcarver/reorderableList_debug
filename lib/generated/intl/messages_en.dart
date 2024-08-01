@@ -21,20 +21,5 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "enterCompounds": MessageLookupByLibrary.simpleMessage(
-            "Enter or edit Compounds or Substances:"),
-        "enterInstitution": MessageLookupByLibrary.simpleMessage(
-            "Enter or edit information about your Institution:"),
-        "enterPersonnel": MessageLookupByLibrary.simpleMessage(
-            "Enter or edit information about your Personnel:"),
-        "enterReferences": MessageLookupByLibrary.simpleMessage(
-            "Enter or edit References (publications or samples):"),
-        "enterResources":
-            MessageLookupByLibrary.simpleMessage("Enter or edit Resources:"),
-        "enterTools": MessageLookupByLibrary.simpleMessage(
-            "Enter or edit Instrument or Tools:"),
-        "selectExperiment":
-            MessageLookupByLibrary.simpleMessage("WHAT do you want to do?")
-      };
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
 }

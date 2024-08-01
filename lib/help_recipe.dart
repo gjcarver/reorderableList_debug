@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'resources_tools.dart';
+import 'design_recipe.dart';
 import 'package:flag/flag.dart';
 import 'help_temp.dart';
 
-void main() => runApp(const FlowChartHelp());
+void main() => runApp(const HelpRecipe());
 
-class FlowChartHelp extends StatelessWidget {
-  const FlowChartHelp({super.key});
+class HelpRecipe extends StatelessWidget {
+  const HelpRecipe({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ToolsHelp(),
+      home: HelpInfo(),
     );
   }
 }
 
-class ToolsHelp extends StatelessWidget {
-  const ToolsHelp({super.key});
+class HelpInfo extends StatelessWidget {
+  const HelpInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       // Remove the debug banner
         debugShowCheckedModeBanner: false,
-        title: 'N4O Workflow Tool: Flowchart Help',
+        title: 'N4O Workflow Tool: Help',
         theme: ThemeData(
-          primarySwatch: Colors.lightBlue,
+          primarySwatch: Colors.orange,
         ),
         home: const HelpPage());
   }
@@ -53,9 +53,9 @@ class _HelpPageState extends State<HelpPage> {
         //     title: _title,
         //     home: Scaffold(
         //       appBar: AppBar(
-        title: const Text('N4O Workflow Tool: Flowchart Help'),
-        leading: const Icon(Icons.help),
-        backgroundColor: Colors.lightBlue,
+        title: const Text('N4O Workflow Tool: Recipe Help'),
+        leading: const Icon(Icons.restaurant_menu_outlined),
+        backgroundColor: Colors.orange,
 
 
         actions: <Widget>[
@@ -108,7 +108,9 @@ class _HelpPageState extends State<HelpPage> {
         ],
 
       ),
-      body: const Center(child: Text('Temporary help page.')),
+      body: const Center(child: Text('Temporary Recipe Help Page. Recipe of artifacts for use in reenactment, experiments, etc.'
+          '\nPhoto: photos of the recipe set-up.'
+          '\nWeb Page: in case the recipe process will be published online.')),
 
       bottomNavigationBar: BottomNavigationBar(
 
@@ -117,14 +119,15 @@ class _HelpPageState extends State<HelpPage> {
           switch (compoundIndex) {
             case 0:
               {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ToolsForm()),
-                );
+//                Navigator.of(context).pop();
                 setState(() {
                   compoundIndex = 0;
                 });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RecipeForm()),
+                );
               }
 
               break;
@@ -159,7 +162,7 @@ class _HelpPageState extends State<HelpPage> {
           }
         },
 
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.orange,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.arrow_back),

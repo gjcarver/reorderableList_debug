@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'tasks.dart';
+import 'tasks_reorder.dart';
 import 'package:flag/flag.dart';
 import 'help_temp.dart';
 
@@ -55,7 +55,7 @@ class _HelpPageState extends State<HelpPage> {
         //       appBar: AppBar(
         title: const Text('N4O Workflow Tool: Tasks Help'),
         leading: const Icon(Icons.help),
-
+        backgroundColor: Colors.lightBlue,
 
         actions: <Widget>[
 
@@ -116,14 +116,15 @@ class _HelpPageState extends State<HelpPage> {
           switch (compoundIndex) {
             case 0:
               {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const TasksForm()),
-                );
+//                Navigator.of(context).pop();
                 setState(() {
                   compoundIndex = 0;
                 });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TasksForm(designName: 'recipeName', tasks: [],)),
+                );
               }
 
               break;

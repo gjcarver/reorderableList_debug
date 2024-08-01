@@ -5,6 +5,8 @@ class SQLHelperTasks {
   static Future<void> createTables(sql.Database database) async {
     await database.execute("""CREATE TABLE items(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        oldIndex INTEGER,
+        newIndex INTEGER,
         designName TEXT,
         taskName TEXT,
         taskType TEXT,
@@ -21,7 +23,7 @@ class SQLHelperTasks {
 
   static Future<sql.Database> db() async {
     return sql.openDatabase(
-      'tasks2.db',
+      'tasks5.db',
       version: 1,
       onCreate: (sql.Database database, int version) async {
         await createTables(database);
@@ -30,7 +32,10 @@ class SQLHelperTasks {
   }
 
   // Create new item (task)
-  static Future<int> createItem(String designName,
+  static Future<int> createItem(
+      int? oldIndex,
+      int? newIndex,
+      String designName,
       String taskName,
       String? taskType,
       String? taskActivityArea,
@@ -38,7 +43,10 @@ class SQLHelperTasks {
       String? taskComment) async {
     final db = await SQLHelperTasks.db();
 
-    final data = {'designName': designName,
+    final data = {
+      'oldIndex': oldIndex,
+      'newIndex': newIndex,
+      'designName': designName,
       'taskName': taskName,
       'taskType': taskType,
       'taskActivityArea': taskActivityArea,
@@ -49,10 +57,22 @@ class SQLHelperTasks {
     return id;
   }
 
+// Update the oldIndex and newIndex columns when the user reorders the items
+  static Future<void> reorderItems(int oldIndex, int newIndex) async {
+    final db = await SQLHelperTasks.db();
+
+    // Update the newIndex column for the item that was moved
+    await db.update('items', {'newIndex': newIndex}, where: "id = ?", whereArgs: [newIndex]);
+
+    // Update the oldIndex column for the item that was moved
+    await db.update('items', {'oldIndex': oldIndex}, where: "id = ?", whereArgs: [oldIndex]);
+
+  }
+
   // Read all items (tasks)
   static Future<List<Map<String, dynamic>>> getItems() async {
     final db = await SQLHelperTasks.db();
-    return db.query('items', orderBy: "id");
+    return db.query('items', orderBy: "newIndex");
   }
 
   // Read a single item by id
@@ -65,6 +85,8 @@ class SQLHelperTasks {
   // Update an item by id
   static Future<int> updateItem(
       int id,
+      int? oldIndex,
+      int? newIndex,
       String designName,
       String taskName,
       String? taskType,
@@ -74,6 +96,8 @@ class SQLHelperTasks {
     final db = await SQLHelperTasks.db();
 
     final data = {
+      'oldIndex': oldIndex,
+      'newIndex': newIndex,
       'designName': designName,
       'taskName': taskName,
       'taskType': taskType,
@@ -93,8 +117,32 @@ class SQLHelperTasks {
     final db = await SQLHelperTasks.db();
     try {
       await db.delete("items", where: "id = ?", whereArgs: [id]);
+//      await db.update('items', id, where: 'id' = );
     } catch (err) {
       debugPrint("Something went wrong when deleting an item: $err");
     }
   }
+
+  static Future<List<Map<String, dynamic>>?> getDataWithMaxId() async {
+    final db = await getInstance();
+    final result = await db.rawQuery("SELECT * FROM items WHERE id = (SELECT MAX(id) FROM items)");
+    return result;
+  }
+
+
+//  static Future<int?> getMaxId() async {
+//    final db = await getInstance();
+//    final result = await db.rawQuery("SELECT MAX(id) as max_id FROM items");
+//    if (result.isNotEmpty) {
+//      return result.first['max_id'] as int?;
+//    } else {
+//      return null;
+//    }
+//  }
+
+//  // Read all items (tasks)
+//  static Future<List<Map<String, dynamic>>> rawQuery() async {
+//    final db = await SQLHelperTasks.db();
+//    return db.query('SELECT MAX(id)+1 as id FROM items');
+//  }
 }

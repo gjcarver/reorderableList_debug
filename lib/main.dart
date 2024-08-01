@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'help_temp.dart';
-import 'resources.dart';
-import 'resources_institution.dart';
-import 'design_experiment.dart';
-import 'design_observation.dart';
-import 'design_measurement.dart';
-import 'design_reconstruction.dart';
-import 'design_reenactment.dart';
-import 'design_replication.dart';
+
+import 'design_recipe.dart';
 
 import 'package:flag/flag.dart';
 
@@ -142,64 +136,64 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            const Text(
-              'Enter or edit information about your Institution:',
-//            AppLocalizations.of(context)!.enterInstitution,
+//            const Text(
+//              'Enter or edit information about your Institution:',
+////            AppLocalizations.of(context)!.enterInstitution,
+//
+//              style: TextStyle(
+//                  fontSize: 20),
+//            ),
 
-              style: TextStyle(
-                  fontSize: 20),
-            ),
+//            Row(
+//              mainAxisAlignment: MainAxisAlignment.center,
+//              children: <Widget>[
+// //               const SizedBox(width: 16),
+//
+//                FloatingActionButton.extended(
+//                  heroTag: "btnMi",
+//                  backgroundColor: Colors.red,
+//                  onPressed: () {
+//
+//                    Navigator.push(
+//                      context,
+//                      MaterialPageRoute(builder: (context) => const InstitutionForm()),
+//                    );
+//
+//                  },
+//                  label: const Text('Institution'),
+//                  icon: const Icon(Icons.account_balance),
+//                ),
+//              ],
+//            ),// This trailing comma makes auto-formatting nicer for build methods.
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
- //               const SizedBox(width: 16),
+//            const Text(
+//              'Enter or edit Resources:',
+//              style: TextStyle(
+//                  fontSize: 20),
+//            ),
 
-                FloatingActionButton.extended(
-                  heroTag: "btnMi",
-                  backgroundColor: Colors.red,
-                  onPressed: () {
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const InstitutionForm()),
-                    );
-
-                  },
-                  label: const Text('Institution'),
-                  icon: const Icon(Icons.account_balance),
-                ),
-              ],
-            ),// This trailing comma makes auto-formatting nicer for build methods.
-
-            const Text(
-              'Enter or edit Resources:',
-              style: TextStyle(
-                  fontSize: 20),
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
- //             crossAxisAlignment: CrossAxisAlignment.space,
-              children: <Widget>[
-//                const SizedBox(width: 16),
-
-                FloatingActionButton.extended(
-                  heroTag: "btnMResources",
-                  backgroundColor: Colors.cyan,
-                  onPressed: () {
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const AvailableResources()),
-                    );
-
-                  },
-                  label: const Text('Resources'),
-                  icon: const Icon(Icons.shopping_cart_outlined),
-                ),
-              ],
-            ),
+//            Row(
+//              mainAxisAlignment: MainAxisAlignment.center,
+// //             crossAxisAlignment: CrossAxisAlignment.space,
+//              children: <Widget>[
+////                const SizedBox(width: 16),
+//
+//                FloatingActionButton.extended(
+//                  heroTag: "btnMResources",
+//                  backgroundColor: Colors.cyan,
+//                  onPressed: () {
+//
+//                    Navigator.push(
+//                      context,
+//                      MaterialPageRoute(builder: (context) => const AvailableResources()),
+//                    );
+//
+//                  },
+//                  label: const Text('Resources'),
+//                  icon: const Icon(Icons.shopping_cart_outlined),
+//                ),
+//              ],
+//            ),
 
 //            Padding(
 //              padding: const EdgeInsets.only(top:10, left:10, right:10),
@@ -225,61 +219,61 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   const SizedBox(height: 10),
 
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-
-                      const SizedBox(height: 16),
-
-                      FloatingActionButton.extended(
-                        heroTag: "btnMEDesign",
-                        backgroundColor: Colors.deepOrange,
-                        onPressed: () {
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ExperimentForm()),
-                          );
-
-                        },
-                        label: const Text('EXPERIMENT'),
-                        icon: const Icon(Icons.science_outlined),
-                      ),
-
-                      FloatingActionButton.extended(
-                        heroTag: "btnMObservation",
-                        backgroundColor: Colors.orange,
-                        onPressed: () {
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ObservationForm()),
-                          );
-
-                        },
-                        label: const Text('OBSERVATION'),
-                        icon: const Icon(Icons.biotech),
-                      ),
-
-                      FloatingActionButton.extended(
-                        heroTag: "btnMMeasurement",
-                        backgroundColor: Colors.amber,
-                        onPressed: () {
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const MeasurementForm()),
-                          );
-
-                        },
-                        label: const Text('MEASUREMENT'),
-                        icon: const Icon(Icons.bar_chart),
-                      ),
-                    ],
-                  ),
-
-              const SizedBox(height: 16),
+//              Row(
+//                mainAxisSize: MainAxisSize.max,
+//                mainAxisAlignment: MainAxisAlignment.center,
+//                children: <Widget>[
+//
+//                      const SizedBox(height: 16),
+//
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMEDesign",
+//                        backgroundColor: Colors.deepOrange,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const ExperimentForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('EXPERIMENT'),
+//                        icon: const Icon(Icons.science_outlined),
+//                      ),
+//
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMObservation",
+//                        backgroundColor: Colors.orange,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const ObservationForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('OBSERVATION'),
+//                        icon: const Icon(Icons.biotech),
+//                      ),
+//
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMMeasurement",
+//                        backgroundColor: Colors.amber,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const MeasurementForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('MEASUREMENT'),
+//                        icon: const Icon(Icons.bar_chart),
+//                      ),
+//                    ],
+//                  ),
+//
+//              const SizedBox(height: 16),
 
 // ],
 //           ),
@@ -289,50 +283,74 @@ class _MyHomePageState extends State<MyHomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const SizedBox(width: 16),
-                      FloatingActionButton.extended(
-                        heroTag: "btnMReconstruction",
-                        backgroundColor: Colors.green,
-                        onPressed: () {
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMReconstruction",
+//                        backgroundColor: Colors.green,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const ReconstructionForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('RECONSTRUCTION'),
+//                        icon: const Icon(Icons.foundation),
+//                      ),
 
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ReconstructionForm()),
-                          );
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMReplication",
+//                        backgroundColor: Colors.lightGreen,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const ReplicationForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('REPLICATION'),
+//                        icon: const Icon(Icons.copy),
+//                      ),
 
-                        },
-                        label: const Text('RECONSTRUCTION'),
-                        icon: const Icon(Icons.foundation),
+//                      FloatingActionButton.extended(
+//                        heroTag: "btnMReenactment",
+//                        backgroundColor: Colors.lime,
+//                        onPressed: () {
+//
+//                          Navigator.push(
+//                            context,
+//                            MaterialPageRoute(builder: (context) => const ReenactmentForm()),
+//                          );
+//
+//                        },
+//                        label: const Text('RE-ENACTMENT'),
+//                        icon: const Icon(Icons.theater_comedy_outlined),
+//                      ),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          const SizedBox(width: 16),
+                          FloatingActionButton.extended(
+                            heroTag: "btnRecipe",
+                            backgroundColor: Colors.green,
+                            onPressed: () {
+
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const RecipeForm()),
+                              );
+
+                            },
+                            label: const Text('RECIPE'),
+                            icon: const Icon(Icons.restaurant_menu_outlined),
+                          ),
+
+
+                        ],
                       ),
 
-                      FloatingActionButton.extended(
-                        heroTag: "btnMReplication",
-                        backgroundColor: Colors.lightGreen,
-                        onPressed: () {
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ReplicationForm()),
-                          );
-
-                        },
-                        label: const Text('REPLICATION'),
-                        icon: const Icon(Icons.copy),
-                      ),
-
-                      FloatingActionButton.extended(
-                        heroTag: "btnMReenactment",
-                        backgroundColor: Colors.lime,
-                        onPressed: () {
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ReenactmentForm()),
-                          );
-
-                        },
-                        label: const Text('RE-ENACTMENT'),
-                        icon: const Icon(Icons.theater_comedy_outlined),
-                      ),
                     ],
                   ),
           ],

@@ -1,6 +1,6 @@
 {
-    "name": "n4o_workflow",
-    "short_name": "n4o_workflow",
+    "name": "flutter_reorderablelist",
+    "short_name": "flutter_reorderablelist",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -49,76 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-
-  /// `Enter or edit information about your Institution:`
-  String get enterInstitution {
-    return Intl.message(
-      'Enter or edit information about your Institution:',
-      name: 'enterInstitution',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter or edit Resources:`
-  String get enterResources {
-    return Intl.message(
-      'Enter or edit Resources:',
-      name: 'enterResources',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `WHAT do you want to do?`
-  String get selectExperiment {
-    return Intl.message(
-      'WHAT do you want to do?',
-      name: 'selectExperiment',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter or edit Compounds or Substances:`
-  String get enterCompounds {
-    return Intl.message(
-      'Enter or edit Compounds or Substances:',
-      name: 'enterCompounds',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter or edit Instrument or Tools:`
-  String get enterTools {
-    return Intl.message(
-      'Enter or edit Instrument or Tools:',
-      name: 'enterTools',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter or edit References (publications or samples):`
-  String get enterReferences {
-    return Intl.message(
-      'Enter or edit References (publications or samples):',
-      name: 'enterReferences',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter or edit information about your Personnel:`
-  String get enterPersonnel {
-    return Intl.message(
-      'Enter or edit information about your Personnel:',
-      name: 'enterPersonnel',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -127,7 +57,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'de'),
     ];
   }
 

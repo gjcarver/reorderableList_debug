@@ -114,11 +114,7 @@ class _HelpPageState extends State<HelpPage> {
           switch (compoundIndex) {
             case 0:
               {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const NFDIexperimentApp()),
-                );
+                Navigator.of(context).pop();
                 setState(() {
                   compoundIndex = 0;
                 });

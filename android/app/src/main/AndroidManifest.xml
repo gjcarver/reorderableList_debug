@@ -3,7 +3,7 @@
     android:versionCode="TODO"
     android:versionName="TODO">
     <application
-        android:label="n4o_workflow"
+        android:label="flutter_reorderablelist"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
